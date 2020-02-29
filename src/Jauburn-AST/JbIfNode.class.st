@@ -18,6 +18,12 @@ JbIfNode >> condition: anObject [
 	condition := anObject
 ]
 
+{ #category : #api }
+JbIfNode >> executeIn: anEnvironment [
+
+	(condition evaluateIn: anEnvironment) ifTrue: [ :each | each trueStatements].
+]
+
 { #category : #accessing }
 JbIfNode >> trueStatements [
 	^ trueStatements
